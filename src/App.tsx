@@ -1,6 +1,7 @@
 import { Budget, Home, Login, Pots, RecurringBills, Registration, Transactions } from "./pages"
 import {BrowserRouter as Router, Route, Routes } from "react-router"
 
+
 function App() {
 
   return (
