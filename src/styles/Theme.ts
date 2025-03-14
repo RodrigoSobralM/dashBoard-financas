@@ -1,4 +1,4 @@
-import { Theme } from "@types";
+import { Theme } from "@/types";
 
 export const defaultTheme: Theme = {
     appBackground: '#F8F4F0',
@@ -29,7 +29,7 @@ export const defaultTheme: Theme = {
     textInput: {
         active: '#FFF',
         activeColor: '#696868',
-        borderColor: '#696868',
+        borderColor: '#98908B',
         disabled: '#FFF',
         disabledBorderColor: '#98908B',
         disabledColor: '#98908B',
