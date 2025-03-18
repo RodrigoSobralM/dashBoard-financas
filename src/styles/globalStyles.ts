@@ -1,7 +1,6 @@
-import { createGlobalStyle, DefaultTheme } from "styled-components";
+import { createGlobalStyle, DefaultTheme } from 'styled-components'
 
-
-export const GlobalStyle = createGlobalStyle<{ theme?: DefaultTheme}> `
+export const GlobalStyle = createGlobalStyle<{ theme?: DefaultTheme }>`
     body, html {
         background: ${(props) => props.theme.appBackground};
         color: ${(props) => props.theme.appColor};
@@ -10,7 +9,7 @@ export const GlobalStyle = createGlobalStyle<{ theme?: DefaultTheme}> `
         font-family: "Public Sans", sans-serif;
     }
     
-    h1, h2, p, ul, li {
+    h1, h2, h3, h4, h5, p, span, ul, li {
         margin: 0;
         padding: 0;
     }

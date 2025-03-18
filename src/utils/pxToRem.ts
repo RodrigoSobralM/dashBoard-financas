@@ -4,5 +4,5 @@
  * @returns O valor convertido em REM
  */
 export const pxToRem = (pixels: number): string => {
-    return `${pixels / 16}rem`
-  }
+  return `${pixels / 16}rem`
+}
