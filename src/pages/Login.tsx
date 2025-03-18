@@ -25,8 +25,8 @@ const Login = () => {
           sx={{
             backgroundColor: '#201F24',
             display: { xs: 'block', lg: 'none' },
-            borderEndStartRadius: `${pxToRem(12)}`,
-            borderEndEndRadius: `${pxToRem(12)}`,
+            borderEndStartRadius: `${pxToRem(8)}`,
+            borderEndEndRadius: `${pxToRem(8)}`,
           }}
         >
           <Box
