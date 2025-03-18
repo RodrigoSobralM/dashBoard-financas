@@ -1,4 +1,5 @@
-export interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CustomInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   helperText?: string
   iconinputs?: {
@@ -8,7 +9,6 @@ export interface CustomInputProps extends React.InputHTMLAttributes<HTMLInputEle
 }
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>
-
 
 export interface FormComponentsProps {
   inputs: CustomInputProps[]

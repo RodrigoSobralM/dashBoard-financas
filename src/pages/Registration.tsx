@@ -22,6 +22,26 @@ const Registration = () => {
         }}
       >
         <Grid2
+          size={{ xs: 12 }}
+          sx={{
+            backgroundColor: '#201F24',
+            display: { xs: 'block', lg: 'none' },
+            borderEndStartRadius: `${pxToRem(12)}`,
+            borderEndEndRadius: `${pxToRem(12)}`,
+          }}
+        >
+          <Box
+            sx={{
+              padding: `${pxToRem(24)}`,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <LogoLarge height={22} width={122} />
+          </Box>
+        </Grid2>
+        <Grid2
           size={{ sm: 4.2 }}
           sx={{
             padding: `${pxToRem(20)}`,
