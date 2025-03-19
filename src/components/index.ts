@@ -1,4 +1,5 @@
 export { default as FormComponent } from './FormComponent'
+export { default as Sidebar } from './Sidebar'
 export * from './BannerImage'
 export * from './CardComponent'
 export * from './Logo'

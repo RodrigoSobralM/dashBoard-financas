@@ -25,13 +25,13 @@ const Login = () => {
           sx={{
             backgroundColor: '#201F24',
             display: { xs: 'block', lg: 'none' },
-            borderEndStartRadius: `${pxToRem(8)}`,
-            borderEndEndRadius: `${pxToRem(8)}`,
+            borderEndStartRadius: pxToRem(8),
+            borderEndEndRadius: pxToRem(8),
           }}
         >
           <Box
             sx={{
-              padding: `${pxToRem(24)}`,
+              padding: pxToRem(24),
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -43,19 +43,16 @@ const Login = () => {
         <Grid2
           size={{ sm: 4.2 }}
           sx={{
-            padding: `${pxToRem(20)}`,
+            padding: pxToRem(20),
             display: { xs: 'none', lg: 'block' },
           }}
         >
           <BannerImage>
-            <Box sx={{ padding: `${pxToRem(40)}` }}>
+            <Box sx={{ padding: pxToRem(40) }}>
               <LogoLarge height={22} width={122} />
             </Box>
-            <Box sx={{ width: `${pxToRem(480)}`, padding: `${pxToRem(40)}` }}>
-              <StyledH1
-                color="#FFF"
-                style={{ paddingBottom: `${pxToRem(15)}` }}
-              >
+            <Box sx={{ width: pxToRem(480), padding: pxToRem(40) }}>
+              <StyledH1 color="#FFF" style={{ paddingBottom: pxToRem(15) }}>
                 Mantenha o controle do seu dinheiro e economize para o seu
                 futuro
               </StyledH1>
@@ -74,12 +71,12 @@ const Login = () => {
             alignItems: 'center',
             justifyContent: 'center',
             height: '100vh',
-            padding: `${pxToRem(16)}`,
+            padding: pxToRem(16),
           }}
         >
           <Container maxWidth="sm" disableGutters>
-            <CardComponent style={{ padding: `${pxToRem(32)}` }}>
-              <Box sx={{ marginBottom: `${pxToRem(32)}` }}>
+            <CardComponent style={{ padding: pxToRem(32) }}>
+              <Box sx={{ marginBottom: pxToRem(32) }}>
                 <StyledH1>Login</StyledH1>
               </Box>
               <FormComponent
@@ -111,15 +108,15 @@ const Login = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  gap: `${pxToRem(8)}`,
-                  marginTop: `${pxToRem(32)}`,
+                  gap: pxToRem(8),
+                  marginTop: pxToRem(32),
                 }}
               >
                 <StyledP color="#696868">Precisa criar uma conta?</StyledP>
                 <Link
                   style={{
                     textDecorationColor: '#201F24',
-                    textUnderlineOffset: `${pxToRem(3)}`,
+                    textUnderlineOffset: pxToRem(3),
                   }}
                   to={'/cadastro'}
                 >
