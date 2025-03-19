@@ -42,7 +42,7 @@ const FormComponent = (props: FormComponentsProps) => {
             </InputWrapper>
             <StyledSpan
               color="#696868"
-              style={{ textAlign: 'right', marginTop: `${pxToRem(4)}` }}
+              style={{ textAlign: 'right', marginTop: pxToRem(4) }}
             >
               {inputProps.helperText}
             </StyledSpan>
