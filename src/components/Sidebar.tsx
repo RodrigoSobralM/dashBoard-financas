@@ -3,7 +3,6 @@ import { useLocation } from 'react-router'
 import { styled, Theme, CSSObject } from '@mui/material/styles'
 import MuiDrawer from '@mui/material/Drawer'
 import List from '@mui/material/List'
-import Divider from '@mui/material/Divider'
 import {
   Box,
   ListItem,
@@ -14,91 +13,68 @@ import {
 import { pxToRem } from '@/utils'
 import { StyledH3 } from './Typographies'
 import { LogoLarge, LogoSmall } from './Logo'
-import { Link } from 'react-router'
+import SidebarItem from './SidebarItem'
 
 const drawerWidth = pxToRem(300)
 
-const openedMixin = (theme: Theme): CSSObject => ({
-  width: drawerWidth,
+const getDrawerMixin = (theme: Theme, isOpen: boolean): CSSObject => ({
+  width: isOpen ? drawerWidth : pxToRem(88),
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
+    duration: isOpen
+      ? theme.transitions.duration.enteringScreen
+      : theme.transitions.duration.leavingScreen,
   }),
   overflowX: 'hidden',
-})
-
-const closedMixin = (theme: Theme): CSSObject => ({
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  overflowX: 'hidden',
-  width: pxToRem(88),
-  [theme.breakpoints.up('sm')]: {
-    width: pxToRem(88),
-  },
 })
 
 const Drawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme }) => ({
+})<{ open: boolean }>(({ theme, open }) => ({
   width: drawerWidth,
   flexShrink: 0,
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
-  variants: [
-    {
-      props: ({ open }) => open,
-      style: {
-        ...openedMixin(theme),
-        '& .MuiDrawer-paper': openedMixin(theme),
-      },
-    },
-    {
-      props: ({ open }) => !open,
-      style: {
-        ...closedMixin(theme),
-        '& .MuiDrawer-paper': closedMixin(theme),
-      },
-    },
-  ],
+  ...getDrawerMixin(theme, open),
+  '& .MuiDrawer-paper': getDrawerMixin(theme, open),
 }))
+
+const menuItems = [
+  {
+    label: 'Visão geral',
+    path: '/home',
+    icon: '/icon-nav-overview.svg',
+    alt: 'Visão geral',
+  },
+  {
+    label: 'Transações',
+    path: '/transacoes',
+    icon: '/icon-nav-transactions.svg',
+    alt: 'Transações',
+  },
+  {
+    label: 'Orçamentos',
+    path: '/orcamento',
+    icon: '/icon-nav-budgets.svg',
+    alt: 'Orçamentos',
+  },
+  {
+    label: 'Potes',
+    path: '/carteira',
+    icon: '/icon-nav-pots.svg',
+    alt: 'Potes',
+  },
+  {
+    label: 'Contas recorrentes',
+    path: '/conta-corrente',
+    icon: '/icon-nav-recurring-bills.svg',
+    alt: 'Contas recorrentes',
+  },
+]
 
 const Sidebar = () => {
   const [open, setOpen] = React.useState(true)
   const location = useLocation() // Hook para obter a localização atual
-
-  const handleDrawerOpen = () => {
-    setOpen(true)
-  }
-
-  const handleDrawerClose = () => {
-    setOpen(false)
-  }
-
-  const menuItems = [
-    'Visão geral',
-    'Transações',
-    'Orçamentos',
-    'Potes',
-    'Contas recorrentes',
-  ]
-
-  const menuIcons = [
-    { alt: 'Visão geral', src: '/home.svg' },
-    { alt: 'Transações', src: '/icon-nav-transactions.svg' },
-    { alt: 'Orçamentos', src: '/icon-nav-budgets.svg' },
-    { alt: 'Potes', src: '/icon-nav-pots.svg' },
-    { alt: 'Contas recorrentes', src: '/icon-nav-recurring-bills.svg' },
-  ]
-
-  const linkItems = [
-    '/home',
-    '/transacoes',
-    '/orcamento',
-    '/carteira',
-    '/conta-corrente',
-  ]
 
   return (
     <Drawer
@@ -129,113 +105,31 @@ const Sidebar = () => {
           <LogoSmall height={22} width={12} />
         )}
       </Box>
-      <Divider />
-
       {/* Lista de navegação principal */}
       <List sx={{ py: pxToRem(4), flexGrow: 1 }}>
-        {menuItems.map((text, index) => {
-          const isActive = location.pathname === linkItems[index] // Verifique se a rota está ativa
-          return (
-            <ListItem
-              key={text}
-              disablePadding
-              sx={{ display: 'block', pb: pxToRem(16) }}
-            >
-              <Link to={linkItems[index]} style={{ textDecoration: 'none' }}>
-                <ListItemButton
-                  autoFocus={false}
-                  sx={{
-                    px: pxToRem(32),
-                    py: pxToRem(16),
-                    gap: pxToRem(16),
-                    transition: 'background-color 0.3s ease-in-out',
-                    width: open ? pxToRem(276) : pxToRem(81),
-                    '&:hover': {
-                      borderLeft: `${pxToRem(4)} solid #277C78`,
-                      background: '#F8F4F0',
-                      borderTopRightRadius: pxToRem(12),
-                      borderBottomRightRadius: pxToRem(12),
-                      img: {
-                        filter:
-                          'invert(38%) sepia(40%) saturate(602%) hue-rotate(136deg) brightness(90%) contrast(88%)',
-                      },
-                      h3: {
-                        color: '#201F24',
-                      },
-                    },
-                    ...(isActive && {
-                      borderLeft: `${pxToRem(4)} solid #277C78`,
-                      background: '#F8F4F0',
-                      borderTopRightRadius: pxToRem(12),
-                      borderBottomRightRadius: pxToRem(12),
-                      img: {
-                        filter:
-                          'invert(38%) sepia(40%) saturate(602%) hue-rotate(136deg) brightness(90%) contrast(88%)',
-                      },
-                      h3: {
-                        color: '#201F24',
-                      },
-                    }),
-                  }}
-                >
-                  <ListItemIcon
-                    sx={[
-                      { minWidth: 0, justifyContent: 'center' },
-                      open ? { mr: pxToRem(3) } : { mr: 'auto' },
-                    ]}
-                  >
-                    <img
-                      src={menuIcons[index].src}
-                      alt={menuIcons[index].alt}
-                      style={{ color: '#FFF' }}
-                    />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={<StyledH3 color="#B3B3B3">{text}</StyledH3>}
-                    sx={{
-                      opacity: open ? 1 : 0,
-                    }}
-                  />
-                </ListItemButton>
-              </Link>
-            </ListItem>
-          )
-        })}
+        {menuItems.map((item) => (
+          <SidebarItem
+            key={item.label}
+            label={item.label}
+            path={item.path}
+            icon={item.icon}
+            isOpen={open}
+            isActive={location.pathname === item.path}
+          />
+        ))}
       </List>
-
-      <Divider />
-
       {/* Lista no final */}
       <List sx={{ pb: pxToRem(58.24) }}>
         <ListItem disablePadding sx={{ display: 'block' }}>
-          <ListItemButton
-            sx={{ minHeight: pxToRem(48), px: pxToRem(32), gap: pxToRem(16) }}
-            onClick={open ? handleDrawerClose : handleDrawerOpen}
-          >
-            <ListItemIcon
-              sx={[
-                { minWidth: 0, justifyContent: 'center', color: '#FFF' },
-                open ? { mr: pxToRem(3) } : { mr: 'auto' },
-              ]}
-            >
-              {open ? (
-                <img
-                  src="/icon-minimize-menu.svg"
-                  alt="Minimize Menu"
-                  style={{ color: '#FFF' }}
-                />
-              ) : (
-                <img
-                  src="/icon-minimize-menu.svg"
-                  style={{ transform: 'rotate(180deg)' }}
-                  alt="Expand Menu"
-                />
-              )}
+          <ListItemButton sx={{ minHeight: pxToRem(48), px: pxToRem(32), gap: pxToRem(16) }} onClick={() => setOpen(!open)}>
+            <ListItemIcon sx={{ minWidth: 0, justifyContent: 'center', color: '#FFF', mr: open ? pxToRem(3) : 'auto' }}>
+              <img
+                src="/icon-minimize-menu.svg"
+                alt={open ? 'Minimize Menu' : 'Expand Menu'}
+                style={open ? {} : { transform: 'rotate(180deg)' }}
+              />
             </ListItemIcon>
-            <ListItemText
-              primary={<StyledH3 color="#B3B3B3">Minimizar Menu</StyledH3>}
-              sx={[open ? { opacity: 1 } : { opacity: 0 }]}
-            />
+            {open && <ListItemText primary={<StyledH3 color="#B3B3B3">Minimizar Menu</StyledH3>} />}
           </ListItemButton>
         </ListItem>
       </List>
