@@ -42,7 +42,7 @@ const Registration = () => {
           </Box>
         </Grid2>
         <Grid2
-          size={{ sm: 4.2 }}
+          size={{ sm: 5 }}
           sx={{
             padding: pxToRem(20),
             display: { xs: 'none', lg: 'block' },
@@ -53,7 +53,7 @@ const Registration = () => {
               <LogoLarge height={22} width={122} />
             </Box>
             <Box sx={{ width: pxToRem(480), padding: pxToRem(40) }}>
-              <StyledH1 color="#FFF" style={{ paddingBottom: pxToRem(15) }}>
+              <StyledH1 color="#FFF" style={{ paddingBottom: pxToRem(24) }}>
                 Mantenha o controle do seu dinheiro e economize para o seu
                 futuro
               </StyledH1>
@@ -66,7 +66,7 @@ const Registration = () => {
           </BannerImage>
         </Grid2>
         <Grid2
-          size={{ xs: 12, sm: 7.8 }}
+          size={{ xs: 12, sm: 7 }}
           sx={{
             display: 'flex',
             alignItems: 'center',
@@ -95,7 +95,7 @@ const Registration = () => {
                     type: 'password',
                     placeholder: 'Digite sua senha',
                     label: 'Criar senha',
-                    iconinputs: {
+                    iconInputs: {
                       iconImage: '/icon-show-password.svg',
                     },
                     helperText: 'As senhas devem ter pelo menos 8 caracteres',

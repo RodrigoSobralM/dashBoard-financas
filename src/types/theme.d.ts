@@ -19,6 +19,7 @@ export interface Theme {
   card: {
     background: string
     backgroundSecundario: string
+    backgroundTerciario: string
   }
   textInput: {
     active: string
