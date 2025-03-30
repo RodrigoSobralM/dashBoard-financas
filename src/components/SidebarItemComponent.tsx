@@ -4,11 +4,14 @@ import StyledListItemButton from './StyledListItemButton'
 import { pxToRem } from '@/utils'
 
 const SidebarItem = (props: SidebarItemProps) => (
-  <ListItem disablePadding sx={{ display: 'block', width: {xs: pxToRem(68.6), sm: pxToRem(104)}  }}>
-    <Link
-      to={props.path ?? '#'}
-      style={{ textDecoration: 'none'}}
-    >
+  <ListItem
+    disablePadding
+    sx={{
+      width: { xs: pxToRem(68.6), sm: '100%' },
+      justifyContent: { xs: 'center', sm: 'center', lg: 'flex-start' }
+    }}
+  >
+    <Link to={props.path ?? '#'} style={{ textDecoration: 'none' }}>
       <StyledListItemButton isActive={props.isActive} isOpen={props.isOpen}>
         <ListItemIcon
           sx={{

@@ -43,7 +43,6 @@ const StyledListItemButton = styled(ListItemButton, {
   },
 
   '@media (max-width: 500px)': {
-    padding: `${pxToRem(8)} 0  0 0`,
     width: pxToRem(68.6),
     height: pxToRem(44),
     '& h5': isActive ? {display: 'none'} : {display: 'none'} 

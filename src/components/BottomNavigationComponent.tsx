@@ -27,6 +27,7 @@ const BottomNavigationComponent = () => {
           display: 'flex',
           alignItems: 'baseline',
           justifyContent: 'space-around',
+          paddingTop: {xs: pxToRem(4) , sm: pxToRem(6)}  
         }}
       >
         {MenuItemsMock.map((item) => (
