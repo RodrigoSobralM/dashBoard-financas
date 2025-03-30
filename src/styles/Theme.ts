@@ -21,6 +21,7 @@ export const defaultTheme: Theme = {
   card: {
     background: '#FFF',
     backgroundSecundario: '#F8F4F0',
+    backgroundTerciario: '#201F24'
   },
   textInput: {
     active: '#FFF',

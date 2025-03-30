@@ -7,4 +7,8 @@ export const CardComponent = styled.div`
   width: 100%;
   border-radius: ${pxToRem(12)};
   box-sizing: border-box;
+
+  &.cardBlack {
+    background-color: ${(props) => props.theme.card.backgroundTerciario};
+  }
 `

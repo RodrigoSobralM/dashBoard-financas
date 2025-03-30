@@ -2,7 +2,7 @@ export interface CustomInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string
   helperText?: string
-  iconinputs?: {
+  iconInputs?: {
     iconImage?: string
     iconFunction?: () => void
   }

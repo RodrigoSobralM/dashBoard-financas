@@ -1,7 +1,7 @@
 interface SidebarItemProps {
-  label: string
-  path: string
-  icon: string
-  isOpen: boolean
-  isActive: boolean
+  label?: string | React.ReactElement;
+  path?: string 
+  icon?: string
+  isOpen?: boolean
+  isActive?: boolean
 }
