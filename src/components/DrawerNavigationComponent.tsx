@@ -1,5 +1,11 @@
 import { pxToRem } from '@/utils'
-import { LogoLarge, LogoSmall, SidebarItem, StyledDrawer, StyledH3 } from '.'
+import {
+  LogoLarge,
+  LogoSmall,
+  SidebarItemComponent,
+  StyledDrawer,
+  StyledH3,
+} from '@/components'
 import {
   Box,
   List,
@@ -12,7 +18,7 @@ import { useState } from 'react'
 import { useLocation } from 'react-router'
 import { MenuItemsMock } from '@/mock'
 
-const DrawerNavigation = () => {
+const DrawerNavigationComponent = () => {
   const [open, setOpen] = useState(true)
   const location = useLocation()
   return (
@@ -35,7 +41,7 @@ const DrawerNavigation = () => {
         }}
       >
         {MenuItemsMock.map((item) => (
-          <SidebarItem
+          <SidebarItemComponent
             key={item.label}
             label={<StyledH3>{item.label}</StyledH3>}
             path={item.path}
@@ -78,4 +84,4 @@ const DrawerNavigation = () => {
   )
 }
 
-export default DrawerNavigation
+export default DrawerNavigationComponent

@@ -1,4 +1,4 @@
-import { CardComponent, Sidebar, StyledH1, StyledP } from '@/components'
+import { CardComponent, SidebarComponent, StyledH1, StyledP } from '@/components'
 import { currecyConverter, pxToRem } from '@/utils'
 import {
   Box,
@@ -9,11 +9,11 @@ import {
 const Home = () => {
   return (
     <Box sx={{ display: 'flex', height: '100vh' }}>
-      <Sidebar />
+      <SidebarComponent />
       <Container
         maxWidth="lg"
         disableGutters
-        sx={{ px: pxToRem(40), py: pxToRem(32) }}
+        sx={{ px: {xs: pxToRem(16) , sm: pxToRem(40)} , py: { xs: pxToRem(24), sm: pxToRem(32)}  }}
       >
         <Grid2 sx={{ mb: pxToRem(32) }}>
           <StyledH1>Visão Geral</StyledH1>

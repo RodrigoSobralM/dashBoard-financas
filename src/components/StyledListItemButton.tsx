@@ -42,7 +42,7 @@ const StyledListItemButton = styled(ListItemButton, {
     '& h5': isActive ? { color: '#201F24' } : { color: '#B3B3B3' },
   },
 
-  '@media (max-width: 375px)': {
+  '@media (max-width: 500px)': {
     padding: `${pxToRem(8)} 0  0 0`,
     width: pxToRem(68.6),
     height: pxToRem(44),

@@ -1,10 +1,10 @@
 import { pxToRem } from '@/utils'
 import { Box, List, useMediaQuery, useTheme } from '@mui/material'
-import SidebarItem from './SidebarItem'
 import { MenuItemsMock } from '@/mock'
 import { StyledH5 } from './Typographies'
+import { SidebarItemComponent } from '@/components'
 
-const BottomNavigation = () => {
+const BottomNavigationComponent = () => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
@@ -30,7 +30,7 @@ const BottomNavigation = () => {
         }}
       >
         {MenuItemsMock.map((item) => (
-          <SidebarItem
+          <SidebarItemComponent
             key={item.label}
             label={<StyledH5>{item.label}</StyledH5>}
             path={item.path}
@@ -44,4 +44,4 @@ const BottomNavigation = () => {
   )
 }
 
-export default BottomNavigation
+export default BottomNavigationComponent
