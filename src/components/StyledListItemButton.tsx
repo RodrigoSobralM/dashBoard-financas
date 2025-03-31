@@ -22,6 +22,9 @@ const StyledListItemButton = styled(ListItemButton, {
             'invert(38%) sepia(40%) saturate(602%) hue-rotate(136deg) brightness(90%) contrast(88%)',
         }
       : 'none',
+    '& .MuiListItemText-primary': {
+      opacity: isOpen ? 1 : 0,
+    },
     '& h3': isActive ? { color: '#201F24' } : { color: '#B3B3B3' },
     '&:hover': {
       borderLeft: `${pxToRem(4)} solid #277C78`,
