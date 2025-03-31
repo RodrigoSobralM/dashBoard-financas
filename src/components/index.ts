@@ -2,7 +2,7 @@ export { default as BottomNavigationComponent } from './BottomNavigationComponen
 export { default as DrawerNavigationComponent } from './DrawerNavigationComponent'
 export { default as FormComponent } from './FormComponent'
 export { default as SidebarComponent } from './SidebarComponent'
-export { default as SidebarItemComponent } from './SidebarItemComponent'
+export { default as ListItemComponent } from './ListItemComponent'
 export { default as StyledDrawer } from './StyledDrawer'
 export { default as StyledListItemButton } from './StyledListItemButton'
 export * from './BannerImage'
