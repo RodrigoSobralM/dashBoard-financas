@@ -2,7 +2,9 @@ import { CustomInputProps } from '@/types'
 import { pxToRem } from '@/utils'
 import styled from 'styled-components'
 
-export const StyledInput = styled.input<CustomInputProps>`
+export const StyledInput = styled.input.withConfig({
+  shouldForwardProp: (prop) => prop !== 'iconInputs',
+})<CustomInputProps>`
   background-color: ${(props) => props.theme.textInput.active};
   color: ${(props) => props.theme.textInput.activeColor};
   border-radius: ${pxToRem(8)};
@@ -15,6 +17,7 @@ export const StyledInput = styled.input<CustomInputProps>`
   padding: ${pxToRem(20)} ${pxToRem(12)};
   transition: background-color 0.3s;
   width: 100%;
+  font-family: "Public Sans", sans-serif;
 
   &::placeholder {
     color: ${(props) => props.theme.textInput.placeHolder};

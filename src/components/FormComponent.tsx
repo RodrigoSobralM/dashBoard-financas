@@ -34,9 +34,9 @@ const FormComponent = (props: FormComponentsProps) => {
             <StyledLabel>{inputProps.label}</StyledLabel>
             <InputWrapper>
               <StyledInput {...inputProps} />
-              {inputProps.iconinputs && (
-                <Icons onClick={inputProps.iconinputs.iconFunction}>
-                  <img src={inputProps.iconinputs.iconImage} alt="" />
+              {inputProps.iconInputs && (
+                <Icons onClick={inputProps.iconInputs.iconFunction}>
+                  <img src={inputProps.iconInputs.iconImage} alt="" />
                 </Icons>
               )}
             </InputWrapper>

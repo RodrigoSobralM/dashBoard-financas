@@ -41,7 +41,7 @@ const Login = () => {
           </Box>
         </Grid2>
         <Grid2
-          size={{ sm: 4.2 }}
+          size={{ sm: 5 }}
           sx={{
             padding: pxToRem(20),
             display: { xs: 'none', lg: 'block' },
@@ -52,7 +52,7 @@ const Login = () => {
               <LogoLarge height={22} width={122} />
             </Box>
             <Box sx={{ width: pxToRem(480), padding: pxToRem(40) }}>
-              <StyledH1 color="#FFF" style={{ paddingBottom: pxToRem(15) }}>
+              <StyledH1 color="#FFF" style={{ paddingBottom: pxToRem(24) }}>
                 Mantenha o controle do seu dinheiro e economize para o seu
                 futuro
               </StyledH1>
@@ -65,7 +65,7 @@ const Login = () => {
           </BannerImage>
         </Grid2>
         <Grid2
-          size={{ xs: 12, sm: 7.8 }}
+          size={{ xs: 12, sm: 7 }}
           sx={{
             display: 'flex',
             alignItems: 'center',
@@ -90,7 +90,7 @@ const Login = () => {
                     type: 'password',
                     placeholder: 'Digite sua senha',
                     label: 'Senha',
-                    iconinputs: {
+                    iconInputs: {
                       iconImage: '/icon-show-password.svg',
                     },
                   },
