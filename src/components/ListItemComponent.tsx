@@ -9,17 +9,16 @@ const ListItemComponent = (props: ListItemProps) => (
     disablePadding
     sx={{
       width: { xs: pxToRem(68.6), sm: '100%' },
-      justifyContent: { xs: 'center', sm: 'center', lg: 'flex-start' }
+      justifyContent: { xs: 'center', sm: 'center', lg: 'flex-start' },
     }}
   >
     <Link to={props.path ?? '#'} style={{ textDecoration: 'none' }}>
-      <StyledListItemButton className={props.classname}  isActive={props.isActive} isOpen={props.isOpen}>
-        <ListItemIcon
-          sx={{
-            minWidth: 0,
-            justifyContent: 'center',
-          }}
-        >
+      <StyledListItemButton
+        className={props.classname}
+        isActive={props.isActive}
+        isOpen={props.isOpen}
+      >
+        <ListItemIcon>
           <img src={props.icon} alt={props.label?.toString()} />
         </ListItemIcon>
         <ListItemText
