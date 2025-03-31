@@ -12,6 +12,10 @@ const StyledListItemButton = styled(ListItemButton, {
     borderLeft: isActive ? `${pxToRem(4)} solid #277C78` : 'none',
     background: isActive ? '#F8F4F0' : 'transparent',
     borderRadius: isActive ? `0 ${pxToRem(12)} ${pxToRem(12)} 0` : 'none',
+    '& .MuiListItemIcon-root': {
+      minWidth: 0,
+      justifyContent: 'center',
+    },
     '& img': isActive
       ? {
           filter:
