@@ -2,8 +2,9 @@ import { ListItem, ListItemIcon, ListItemText } from '@mui/material'
 import { Link } from 'react-router'
 import StyledListItemButton from './StyledListItemButton'
 import { pxToRem } from '@/utils'
+import { ListItemProps } from '@/types'
 
-const SidebarItem = (props: SidebarItemProps) => (
+const ListItemComponent = (props: ListItemProps) => (
   <ListItem
     disablePadding
     sx={{
@@ -12,7 +13,7 @@ const SidebarItem = (props: SidebarItemProps) => (
     }}
   >
     <Link to={props.path ?? '#'} style={{ textDecoration: 'none' }}>
-      <StyledListItemButton isActive={props.isActive} isOpen={props.isOpen}>
+      <StyledListItemButton className={props.classname}  isActive={props.isActive} isOpen={props.isOpen}>
         <ListItemIcon
           sx={{
             minWidth: 0,
@@ -32,4 +33,4 @@ const SidebarItem = (props: SidebarItemProps) => (
   </ListItem>
 )
 
-export default SidebarItem
+export default ListItemComponent
