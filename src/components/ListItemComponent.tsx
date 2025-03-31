@@ -4,7 +4,7 @@ import StyledListItemButton from './StyledListItemButton'
 import { pxToRem } from '@/utils'
 import { ListItemProps } from '@/types'
 
-const ListItemComponent = (props: ListItemProps) => (
+const ListItemSidebarComponent = (props: ListItemProps) => (
   <ListItem
     disablePadding
     sx={{
@@ -21,15 +21,14 @@ const ListItemComponent = (props: ListItemProps) => (
         <ListItemIcon>
           <img src={props.icon} alt={props.label?.toString()} />
         </ListItemIcon>
-        <ListItemText
-          primary={props.label}
-          sx={{
-            opacity: props.isOpen ? 1 : 0,
-          }}
-        />
+        <ListItemText primary={props.label} />
       </StyledListItemButton>
     </Link>
   </ListItem>
 )
 
-export default ListItemComponent
+const ListItemHomeCardTransactions = () => {
+
+}
+
+export { ListItemSidebarComponent, ListItemHomeCardTransactions }

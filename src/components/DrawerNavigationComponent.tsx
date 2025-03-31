@@ -1,8 +1,8 @@
 import { pxToRem } from '@/utils'
 import {
+  ListItemSidebarComponent,
   LogoLarge,
   LogoSmall,
-  ListItemComponent,
   StyledDrawer,
   StyledH3,
 } from '@/components'
@@ -41,7 +41,7 @@ const DrawerNavigationComponent = () => {
         }}
       >
         {MenuItemsMock.map((item) => (
-          <ListItemComponent
+          <ListItemSidebarComponent
             key={item.label}
             label={<StyledH3>{item.label}</StyledH3>}
             path={item.path}

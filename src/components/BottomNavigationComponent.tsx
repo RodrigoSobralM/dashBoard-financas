@@ -2,7 +2,7 @@ import { pxToRem } from '@/utils'
 import { Box, List, useMediaQuery, useTheme } from '@mui/material'
 import { MenuItemsMock } from '@/mock'
 import { StyledH5 } from './Typographies'
-import { ListItemComponent } from '@/components'
+import { ListItemSidebarComponent } from '@/components'
 
 const BottomNavigationComponent = () => {
   const theme = useTheme()
@@ -31,7 +31,7 @@ const BottomNavigationComponent = () => {
         }}
       >
         {MenuItemsMock.map((item) => (
-          <ListItemComponent
+          <ListItemSidebarComponent
             key={item.label}
             label={<StyledH5>{item.label}</StyledH5>}
             path={item.path}
