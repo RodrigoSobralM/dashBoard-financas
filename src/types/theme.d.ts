@@ -32,6 +32,7 @@ export interface Theme {
   }
   typographies: {
     colorGray300: string
+    colorGray500: string
     colorGray900: string
     colorGreen: string
   }

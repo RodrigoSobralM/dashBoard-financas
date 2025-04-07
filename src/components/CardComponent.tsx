@@ -11,4 +11,8 @@ export const CardComponent = styled.div`
   &.cardBlack {
     background-color: ${(props) => props.theme.card.backgroundTerciario};
   }
+  
+  &.cardBeige {
+    background-color: ${(props) => props.theme.card.backgroundSecundario};
+  }
 `

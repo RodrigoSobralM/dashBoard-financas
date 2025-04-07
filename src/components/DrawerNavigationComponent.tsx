@@ -21,8 +21,9 @@ import { MenuItemsMock } from '@/mock'
 const DrawerNavigationComponent = () => {
   const [open, setOpen] = useState(true)
   const location = useLocation()
+  
   return (
-    <StyledDrawer variant="permanent" open={open}>
+    <StyledDrawer style={{backgroundColor: 'transparent'}} variant="permanent" open={open}>
       <Box sx={{ px: pxToRem(32), py: pxToRem(40) }}>
         {open ? (
           <LogoLarge height={22} width={122} />
