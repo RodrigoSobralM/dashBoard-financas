@@ -28,7 +28,7 @@ const ListItemSidebarComponent = (props: ListItemProps) => (
 )
 
 const ListItemHomeCardTransactions = () => {
-
+  
 }
 
 export { ListItemSidebarComponent, ListItemHomeCardTransactions }

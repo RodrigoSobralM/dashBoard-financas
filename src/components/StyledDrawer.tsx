@@ -2,10 +2,11 @@ import { pxToRem } from '@/utils'
 import { CSSObject, styled, Theme } from '@mui/material'
 import MuiDrawer from '@mui/material/Drawer'
 
-const drawerWidth = pxToRem(300)
+const drawerWidthOpen = pxToRem(300)
+const drawerWidthClosed = pxToRem(88)
 
 const getDrawerMixin = (theme: Theme, isOpen: boolean): CSSObject => ({
-  width: isOpen ? drawerWidth : pxToRem(88),
+  width: isOpen ? drawerWidthOpen : drawerWidthClosed,
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: isOpen
@@ -27,7 +28,7 @@ const getDrawerMixin = (theme: Theme, isOpen: boolean): CSSObject => ({
 const StyledDrawer = styled(MuiDrawer, {
   shouldForwardProp: (prop) => prop !== 'open',
 })<{ open: boolean }>(({ theme, open }) => ({
-  width: drawerWidth,
+  width: drawerWidthOpen,
   flexShrink: 0,
   whiteSpace: 'nowrap',
   boxSizing: 'border-box',
