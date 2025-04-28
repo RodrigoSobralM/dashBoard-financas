@@ -46,7 +46,6 @@ const ListItemHomeCardTransactions = (props: ListItemAvatarProps) => {
             alignItems: 'center',
             justifyContent: 'space-between',
             pt: pxToRem(20),
-            pb: pxToRem(20),
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: pxToRem(16) }}>
@@ -58,7 +57,7 @@ const ListItemHomeCardTransactions = (props: ListItemAvatarProps) => {
           </Box>
         </ListItemAvatar>
       </ListItem>
-      {!props.isLast && <Divider />}
+      {!props.isLast && <Divider sx={{pb: pxToRem(20)}} />}
     </>
   )
 }
