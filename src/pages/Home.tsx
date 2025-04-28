@@ -1,6 +1,7 @@
 import {
   CardComponent,
   CustomChart,
+  ListItemHomeCardTransactions,
   SidebarComponent,
   StyledBorder,
   StyledH1,
@@ -10,8 +11,8 @@ import {
   StyledSpan,
 } from '@/components'
 import { mockData } from '@/mock'
-import { currecyConverter, pxToRem } from '@/utils'
-import { Box, Container, Grid2 } from '@mui/material'
+import { currecyConverter, dataFormatted, pxToRem } from '@/utils'
+import { Box, Container, Grid2, List } from '@mui/material'
 
 const Home = () => {
   const potsSumTotal = mockData.pots.reduce((sum, pot) => sum + pot.total, 0)
@@ -158,8 +159,61 @@ const Home = () => {
                   </Grid2>
                 </CardComponent>
               </Grid2>
+
               <Grid2>
-                <CardComponent style={{ height: pxToRem(519) }}></CardComponent>
+                <CardComponent
+                  heightlg={pxToRem(519)}
+                  heightxs={pxToRem(503)}
+                  style={{ height: pxToRem(519), padding: pxToRem(32) }}
+                >
+                  <Grid2
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <StyledH2>Transações</StyledH2>
+                    <Grid2
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: pxToRem(12),
+                      }}
+                    >
+                      <StyledP color="#696868">Ver tudo</StyledP>
+                      <img src="/icon-caret-right.svg" alt="" />
+                    </Grid2>
+                  </Grid2>
+                  <List>
+                    {mockData.transactions
+                      .slice(0, 5)
+                      .map((item, index, array) => (
+                        <ListItemHomeCardTransactions
+                          key={index}
+                          img={item.avatar}
+                          name={<StyledH4>{item.name}</StyledH4>}
+                          value={
+                            item.amount < 0 ? (
+                              <StyledH4>
+                                {currecyConverter(item.amount)}
+                              </StyledH4>
+                            ) : (
+                              <StyledH4 color="#277C78">
+                                +{currecyConverter(item.amount)}
+                              </StyledH4>
+                            )
+                          }
+                          date={
+                            <StyledSpan color="#696868">
+                              {dataFormatted(new Date(item.date))}
+                            </StyledSpan>
+                          }
+                          isLast={index === array.length - 1}
+                        />
+                      ))}
+                  </List>
+                </CardComponent>
               </Grid2>
             </Grid2>
 
@@ -203,6 +257,7 @@ const Home = () => {
                     sx={{
                       alignItems: 'center',
                       pt: { sm: pxToRem(51), xs: pxToRem(28) },
+                      gap: pxToRem(16),
                     }}
                   >
                     <Grid2
@@ -233,11 +288,16 @@ const Home = () => {
                         flexDirection: 'column',
                         gridTemplateColumns: 'repeat(2, 1fr)',
                         gap: pxToRem(16),
+                        alignItems: { sm: 'end' },
                       }}
                     >
                       {mockData.budgets.slice(0, 4).map((item, index) => (
                         <Box
-                          sx={{ display: 'flex', gap: pxToRem(16) }}
+                          sx={{
+                            width: pxToRem(101),
+                            display: 'flex',
+                            gap: pxToRem(16),
+                          }}
                           key={index}
                         >
                           <StyledBorder
