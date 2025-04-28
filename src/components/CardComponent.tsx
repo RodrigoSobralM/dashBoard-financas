@@ -26,6 +26,16 @@ export const CardComponent = styled.div<CardComponentProps>`
     background-color: ${(props) => props.theme.card.backgroundSecundario};
   }
 
+  &.cardRecurringBills {
+    width: 100%;
+    height: ${pxToRem(61)};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: ${pxToRem(16)};
+    padding-right: ${pxToRem(16)};
+  }
+
   &.cardPotsRecents {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -63,6 +63,7 @@ const Home = () => {
             </CardComponent>
           </Grid2>
 
+          {/* Card da Carteira */}
           <Grid2 container size={{ xs: 12, lg: 12 }} sx={{ pt: pxToRem(8) }}>
             <Grid2
               size={{ xs: 12, lg: 7 }}
@@ -73,7 +74,7 @@ const Home = () => {
               }}
             >
               <Grid2>
-                <CardComponent style={{ padding: `${pxToRem(32)}` }}>
+                <CardComponent style={{ padding: pxToRem(32) }}>
                   <Grid2
                     sx={{
                       display: 'flex',
@@ -160,17 +161,17 @@ const Home = () => {
                 </CardComponent>
               </Grid2>
 
+              {/* Card das Trasanções */}
               <Grid2>
                 <CardComponent
-                  heightlg={pxToRem(519)}
-                  heightxs={pxToRem(503)}
-                  style={{ height: pxToRem(519), padding: pxToRem(32) }}
+                  style={{ padding: pxToRem(32) }}
                 >
                   <Grid2
                     sx={{
                       display: 'flex',
                       justifyContent: 'space-between',
                       alignItems: 'center',
+                      pb: pxToRem(12)
                     }}
                   >
                     <StyledH2>Transações</StyledH2>
@@ -185,7 +186,7 @@ const Home = () => {
                       <img src="/icon-caret-right.svg" alt="" />
                     </Grid2>
                   </Grid2>
-                  <List>
+                  <List disablePadding>
                     {mockData.transactions
                       .slice(0, 5)
                       .map((item, index, array) => (
@@ -217,6 +218,7 @@ const Home = () => {
               </Grid2>
             </Grid2>
 
+            {/* Card de Orçamentos */}
             <Grid2
               size={{ xs: 12, lg: 5 }}
               sx={{
@@ -227,8 +229,6 @@ const Home = () => {
             >
               <Grid2>
                 <CardComponent
-                  heightxs={pxToRem(466)}
-                  heightlg={pxToRem(410)}
                   style={{ padding: pxToRem(32) }}
                 >
                   <Grid2
@@ -324,8 +324,71 @@ const Home = () => {
                   </Grid2>
                 </CardComponent>
               </Grid2>
+
+              {/* Card de Contas recorrentes */}
               <Grid2>
-                <CardComponent style={{ height: pxToRem(327) }}></CardComponent>
+                <CardComponent
+                  style={{ padding: pxToRem(32) }}
+                >
+                  <Grid2
+                    sx={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <StyledH2>Contas Recorrentes</StyledH2>
+                    <Grid2
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: pxToRem(12),
+                      }}
+                    >
+                      <StyledP color="#696868" style={{ whiteSpace: 'nowrap'}}>Veja Detalhes</StyledP>
+                      <img src="/icon-caret-right.svg" alt="" />
+                    </Grid2>
+                  </Grid2>
+
+                  <Grid2
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: pxToRem(12),
+                      pt: pxToRem(32),
+                    }}
+                  >
+                    <CardComponent
+                      className="cardBeige cardRecurringBills"
+                      style={{ borderLeft: `${pxToRem(4)} solid #277C78` }}
+                    >
+                      <StyledP color="#696868">Contas Pagas</StyledP>
+                      <StyledH4>{currecyConverter(190)}</StyledH4>
+                    </CardComponent>
+                    <CardComponent
+                      className="cardBeige cardRecurringBills"
+                      style={{
+                        width: '100%',
+                        height: pxToRem(61),
+                        borderLeft: `${pxToRem(4)} solid #F2CDAC`,
+                      }}
+                    >
+                      <StyledP color="#696868">Total a Vencer</StyledP>
+                      <StyledH4>{currecyConverter(194.98)}</StyledH4>
+                    </CardComponent>
+                    <CardComponent
+                      className="cardBeige cardRecurringBills"
+                      style={{
+                        width: '100%',
+                        height: pxToRem(61),
+                        borderLeft: `${pxToRem(4)} solid #82C9D7`,
+                      }}
+                    >
+                      <StyledP color="#696868">Vencimento Proximo</StyledP>
+                      <StyledH4>{currecyConverter(59.98)}</StyledH4>
+                    </CardComponent>
+                  </Grid2>
+                </CardComponent>
               </Grid2>
             </Grid2>
           </Grid2>
