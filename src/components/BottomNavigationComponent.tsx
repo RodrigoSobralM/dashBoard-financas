@@ -2,7 +2,7 @@ import { pxToRem } from '@/utils'
 import { Box, List, useMediaQuery, useTheme } from '@mui/material'
 import { MenuItemsMock } from '@/mock'
 import { StyledH5 } from './Typographies'
-import { ListItemComponent } from '@/components'
+import { ListItemSidebarComponent } from '@/components'
 
 const BottomNavigationComponent = () => {
   const theme = useTheme()
@@ -15,7 +15,6 @@ const BottomNavigationComponent = () => {
         bottom: 0,
         left: 0,
         right: 0,
-        width: '100%',
         backgroundColor: '#201F24',
         height: isMobile ? pxToRem(52) : pxToRem(74),
         borderTopLeftRadius: pxToRem(8),
@@ -27,18 +26,19 @@ const BottomNavigationComponent = () => {
           display: 'flex',
           alignItems: 'baseline',
           justifyContent: 'space-around',
-          paddingTop: {xs: pxToRem(4) , sm: pxToRem(6)}  
+          paddingTop: { xs: pxToRem(4), sm: pxToRem(6) },
+          paddingBottom: 0,
         }}
       >
         {MenuItemsMock.map((item) => (
-          <ListItemComponent
+          <ListItemSidebarComponent
             key={item.label}
             label={<StyledH5>{item.label}</StyledH5>}
             path={item.path}
             icon={item.icon}
             isOpen={true}
             isActive={location.pathname === item.path}
-            classname='style-sidebar-item'
+            classname="style-sidebar-item"
           />
         ))}
       </List>

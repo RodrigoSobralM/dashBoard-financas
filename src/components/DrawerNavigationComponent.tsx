@@ -1,8 +1,8 @@
 import { pxToRem } from '@/utils'
 import {
+  ListItemSidebarComponent,
   LogoLarge,
   LogoSmall,
-  ListItemComponent,
   StyledDrawer,
   StyledH3,
 } from '@/components'
@@ -21,8 +21,9 @@ import { MenuItemsMock } from '@/mock'
 const DrawerNavigationComponent = () => {
   const [open, setOpen] = useState(true)
   const location = useLocation()
+  
   return (
-    <StyledDrawer variant="permanent" open={open}>
+    <StyledDrawer style={{backgroundColor: 'transparent'}} variant="permanent" open={open}>
       <Box sx={{ px: pxToRem(32), py: pxToRem(40) }}>
         {open ? (
           <LogoLarge height={22} width={122} />
@@ -41,7 +42,7 @@ const DrawerNavigationComponent = () => {
         }}
       >
         {MenuItemsMock.map((item) => (
-          <ListItemComponent
+          <ListItemSidebarComponent
             key={item.label}
             label={<StyledH3>{item.label}</StyledH3>}
             path={item.path}

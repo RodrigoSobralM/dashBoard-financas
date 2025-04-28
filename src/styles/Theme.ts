@@ -34,6 +34,7 @@ export const defaultTheme: Theme = {
   },
   typographies: {
     colorGray300: '#B3B3B3',
+    colorGray500: '#696868',
     colorGray900: '#201F24',
     colorGreen: '#277C78',
   },

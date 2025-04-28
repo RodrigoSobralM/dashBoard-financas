@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle<{ theme?: DefaultTheme }>`
         margin: 0;
         padding: 0;
         font-family: "Public Sans", sans-serif;
+        heigth: 100vh;
     }
     
     h1, h2, h3, h4, h5, p, span, ul, li {
