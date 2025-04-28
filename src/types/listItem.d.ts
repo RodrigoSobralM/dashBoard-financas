@@ -6,3 +6,11 @@ export interface ListItemProps {
   isActive?: boolean
   classname?: string
 }
+
+export interface ListItemAvatarProps {
+  img?: string
+  name: string | React.ReactElement
+  value: string | React.ReactElement
+  date: string | React.ReactElement
+  isLast?: boolean
+}

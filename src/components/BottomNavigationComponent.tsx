@@ -19,6 +19,7 @@ const BottomNavigationComponent = () => {
         height: isMobile ? pxToRem(52) : pxToRem(74),
         borderTopLeftRadius: pxToRem(8),
         borderTopRightRadius: pxToRem(8),
+        zIndex: 1000
       }}
     >
       <List
