@@ -24,12 +24,11 @@ const Transactions = () => {
         <Grid2 container>
           <Grid2 size={12}>
             <CardComponent
-              style={{ padding: pxToRem(32) }}
             >
-              <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              <Box sx={{ display: { xs: 'none', sm: 'block' }, padding: pxToRem(32) }}>
                 <TableComponent />
               </Box>
-              <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
+              <Box sx={{ display: { xs: 'block', sm: 'none' }, px: pxToRem(20), py: pxToRem(24) }}>
                 <List disablePadding>
                   {mockData.transactions
                     .slice(0, 10)
