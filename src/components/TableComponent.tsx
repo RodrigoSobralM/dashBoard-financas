@@ -26,7 +26,7 @@ const TableComponent = () => {
       : 0
 
   const handleChangePage = (
-    event: React.MouseEvent<HTMLButtonElement> | null,
+    __event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
     setPage(newPage)
