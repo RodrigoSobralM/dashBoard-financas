@@ -1,5 +1,15 @@
+import { SidebarComponent } from '@/components'
+import { Box, Container } from '@mui/material'
+
 const Transactions = () => {
-  return <div>Transactions</div>
+  return (
+    <Box sx={{ display: 'flex' }}>
+      <SidebarComponent />
+      <Container>
+        
+      </Container>
+    </Box>
+  ) 
 }
 
 export default Transactions
