@@ -12,5 +12,6 @@ export interface ListItemAvatarProps {
   name: string | React.ReactElement
   value: string | React.ReactElement
   date: string | React.ReactElement
+  categoria?: string | React.ReactElement
   isLast?: boolean
 }

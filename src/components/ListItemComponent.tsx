@@ -50,7 +50,7 @@ const ListItemHomeCardTransactions = (props: ListItemAvatarProps) => {
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: pxToRem(16) }}>
             <Avatar alt="" src={props.img} />
-            <ListItemText primary={props.name} />
+            <ListItemText primary={props.name} secondary={props.categoria} />
           </Box>
           <Box>
             <ListItemText primary={props.value} secondary={props.date} sx={{textAlign: 'right'}} />
