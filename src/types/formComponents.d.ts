@@ -1,7 +1,8 @@
 export interface CustomInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string
+  label?: string
   helperText?: string
+  color?: string
   iconInputs?: {
     iconImage?: string
     iconFunction?: () => void

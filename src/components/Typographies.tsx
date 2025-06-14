@@ -4,7 +4,7 @@ import { pxToRem } from '@/utils'
 
 export const StyledH1 = styled.h1<TypographiesProps>`
   font-family: 'Public sans', sans-serif;
-  color: ${(props) => props.color || '#201F24'};
+  color: ${(props) => props.selected ? '#fff' : (props.color || '#201F24')};
   font-size: ${(props) => pxToRem(props.size || 32)};
   font-weight: ${(props) => props.weight || 700};
   letter-spacing: ${pxToRem(0)};
@@ -12,7 +12,7 @@ export const StyledH1 = styled.h1<TypographiesProps>`
 `
 export const StyledH2 = styled.h2<TypographiesProps>`
   font-family: 'Public sans', sans-serif;
-  color: ${(props) => props.color || '#201F24'};
+  color: ${(props) => props.selected ? '#fff' : (props.color || '#201F24')};
   font-size: ${(props) => pxToRem(props.size || 20)};
   font-weight: ${(props) => props.weight || 700};
   letter-spacing: ${pxToRem(0)};
@@ -21,7 +21,7 @@ export const StyledH2 = styled.h2<TypographiesProps>`
 
 export const StyledH3 = styled.h3<TypographiesProps>`
   font-family: 'Public sans', sans-serif;
-  color: ${(props) => props.color || '#201F24'};
+  color: ${(props) => props.selected ? '#fff' : (props.color || '#201F24')};
   font-size: ${(props) => pxToRem(props.size || 16)};
   font-weight: ${(props) => props.weight || 700};
   letter-spacing: ${pxToRem(0)};
@@ -29,7 +29,7 @@ export const StyledH3 = styled.h3<TypographiesProps>`
 `
 export const StyledH4 = styled.h4<TypographiesProps>`
   font-family: "Public sans", sans-serif;
-  color: ${(props) => props.color || '#201F24'};
+  color: ${(props) => props.selected ? '#fff' : (props.color || '#201F24')};
   font-size: ${(props) => pxToRem(props.size || 14)};
   font-weight: ${(props) => props.weight || 700};
   letter-spacing: ${pxToRem(0)};
@@ -38,7 +38,7 @@ export const StyledH4 = styled.h4<TypographiesProps>`
 
 export const StyledH5 = styled.h5<TypographiesProps>`
   font-family: 'Public sans', sans-serif;
-  color: ${(props) => props.color || '#201F24'};
+  color: ${(props) => props.selected ? '#fff' : (props.color || '#201F24')};
   font-size: ${(props) => pxToRem(props.size || 12)};
   font-weight: ${(props) => props.weight || 700};
   letter-spacing: ${pxToRem(0)};
@@ -47,7 +47,7 @@ export const StyledH5 = styled.h5<TypographiesProps>`
 
 export const StyledP = styled.p<TypographiesProps>`
   font-family: 'Public sans', sans-serif;
-  color: ${(props) => props.color || '#201F24'};
+  color: ${(props) => props.selected ? '#fff' : (props.color || '#201F24')};
   font-size: ${(props) => pxToRem(props.size || 14)};
   font-weight: ${(props) => props.weight || 400};
   letter-spacing: ${pxToRem(0)};
@@ -56,7 +56,7 @@ export const StyledP = styled.p<TypographiesProps>`
 
 export const StyledSpan = styled.span<TypographiesProps>`
   font-family: 'Public sans', sans-serif;
-  color: ${(props) => props.color || '#201F24'};
+  color: ${(props) => props.selected ? '#fff' : (props.color || '#201F24')};
   font-size: ${(props) => pxToRem(props.size || 12)};
   font-weight: ${(props) => props.weight || 400};
   letter-spacing: ${pxToRem(0)};

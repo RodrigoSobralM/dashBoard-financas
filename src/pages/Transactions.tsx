@@ -1,9 +1,34 @@
-import { CardComponent, ListItemHomeCardTransactions, SidebarComponent, StyledH1, StyledH4, StyledSpan, TableComponent } from '@/components'
+import {
+  CardComponent,
+  FormComponent,
+  ListItemHomeCardTransactions,
+  SidebarComponent,
+  StyledH1,
+  StyledH4,
+  StyledP,
+  StyledSpan,
+  TableComponent,
+} from '@/components'
 import { mockData } from '@/mock'
 import { currecyConverter, dataFormatted, pxToRem } from '@/utils'
-import { Box, Container, Grid2, List } from '@mui/material'
+import {
+  Box,
+  Container,
+  Grid2,
+  List,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from '@mui/material'
+import { useState } from 'react'
 
 const Transactions = () => {
+  const [age, setAge] = useState('')
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value)
+  }
+
   return (
     <Box sx={{ display: 'flex' }}>
       <SidebarComponent />
@@ -23,12 +48,98 @@ const Transactions = () => {
         </Grid2>
         <Grid2 container>
           <Grid2 size={12}>
-            <CardComponent
-            >
-              <Box sx={{ display: { xs: 'none', sm: 'block' }, padding: pxToRem(32) }}>
+            <CardComponent>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ width: pxToRem(320) }}>
+                  <FormComponent
+                    inputs={[
+                      {
+                        placeholder: 'Buscar Transação',
+                        color: '#201F24',
+                        iconInputs: {
+                          iconImage: '/icon-search.svg',
+                        },
+                      },
+                    ]}
+                    buttons={[]}
+                  />
+                </Box>
+                <Box sx={{ display: 'flex' }}>
+                  <Box>
+                    <Select
+                      value={age}
+                      onChange={handleChange}
+                      displayEmpty
+                      inputProps={{ 'aria-label': 'Without label' }}
+                      sx={{
+                        height: pxToRem(45),
+                        width: pxToRem(110),
+                        '& .MuiOutlinedInput-notchedOutline': {
+                          borderColor: '#98908D',
+                        },
+                        '&:hover .MuiOutlinedInput-notchedOutline': {
+                          borderColor: '#201F24',
+                        },
+                        '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                          borderColor: '#201F24',
+                        },
+                        borderRadius: pxToRem(8),
+                      }}
+                    >
+                      <MenuItem value="">
+                        <StyledP>Latest</StyledP>
+                      </MenuItem>
+                      <MenuItem value={10}>
+                        <StyledP>Ten</StyledP>
+                      </MenuItem>
+                      <MenuItem value={20}>
+                        <StyledP>Twenty</StyledP>
+                      </MenuItem>
+                      <MenuItem value={30}>
+                        <StyledP>Thirty</StyledP>
+                      </MenuItem>
+                    </Select>
+                  </Box>
+                  <Box>
+                    <Select
+                      value={age}
+                      onChange={handleChange}
+                      displayEmpty
+                      inputProps={{ 'aria-label': 'Without label' }}
+                      sx={{
+                        height: pxToRem(45),
+                        width: pxToRem(177),
+                        borderRadius: pxToRem(8),
+                      }}
+                    >
+                      <MenuItem value="">
+                        <em>None</em>
+                      </MenuItem>
+                      <MenuItem value={10}>Ten</MenuItem>
+                      <MenuItem value={20}>Twenty</MenuItem>
+                      <MenuItem value={30}>Thirty</MenuItem>
+                    </Select>
+                  </Box>
+                </Box>
+              </Box>
+
+              <Box
+                sx={{
+                  display: { xs: 'none', sm: 'block' },
+                  padding: pxToRem(32),
+                }}
+              >
                 <TableComponent />
               </Box>
-              <Box sx={{ display: { xs: 'block', sm: 'none' }, px: pxToRem(20), py: pxToRem(24) }}>
+
+              {/* Responsividade no mobile */}
+              <Box
+                sx={{
+                  display: { xs: 'block', sm: 'none' },
+                  px: pxToRem(20),
+                  py: pxToRem(24),
+                }}
+              >
                 <List disablePadding>
                   {mockData.transactions
                     .slice(0, 10)
